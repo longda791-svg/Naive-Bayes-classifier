@@ -113,7 +113,7 @@ def predict_dataset(_train_word_dict, _spam_count, _ham_count, data):
         # 拉普拉斯平滑
         word_occurs_counts_ham = _train_word_dict[word][0]
         # 出现过这个词的信件数 / 垃圾邮件数
-        ham_probability += math.log((float(word_occurs_counts_ham) + 1) / _ham_count + 2)
+        ham_probability += math.log((float(word_occurs_counts_ham) + 1) / (_ham_count + 2))
 
         word_occurs_counts_spam = _train_word_dict[word][1]
         # 出现过这个词的信件数 / 普通邮件数
